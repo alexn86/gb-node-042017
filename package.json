@@ -1,18 +1,22 @@
 {
-  "name": "www",
+  "name": "Node.js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js geekbrain's homework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexander Nikolskiy",
   "license": "ISC",
   "dependencies": {
     "ansi": "^0.3.1",
     "beeper": "^1.1.1",
     "colors": "^1.1.2",
+    "minimist": "^1.2.0",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
   }
 }
