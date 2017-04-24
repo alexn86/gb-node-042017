@@ -3,13 +3,11 @@ const cheerio = require('cheerio');
 
 function parse(html, parent, child, count) {
     const $ = cheerio.load(html);
-    const data = [];
 
-    $(parent).slice(0, count).each((i, el) => {
-        data.push({ title: $(el).find(child).eq(0).text() })
-    });
-
-    return data;
+    return $(parent)
+            .get()
+            .slice(0, count)
+            .map((el) => ({ title: $(el).find(child).eq(0).text() }));
 }
 
 exports.get = function (source, html, count) {
