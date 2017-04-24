@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="loader">
+        <div class="loader__title">Загрузчик новостей</div>
+        <div class="loader__filter filter">
+            <form action="/load" class="filter__form" method="post">
+                <div class="filter__field">
+                    <select name="source" id="source">
+                        <option value="">Выберите источник</option>
+                        <option value="ria">ria.ru</option>
+                        <option value="championat">championat.com</option>
+                    </select>
+                </div>
+                <div class="filter__field">
+                    <select name="category" id="category">
+                        <option value="">Выберите категорию</option>
+                        <option value="https://ria.ru/politics/" class="ria">Политика</option>
+                        <option value="https://ria.ru/society/" class="ria">Общество</option>
+                        <option value="https://ria.ru/economy/" class="ria">Экономика</option>
+                        <option value="https://ria.ru/world/" class="ria">В Мире</option>
+                        <option value="https://ria.ru/incidents/" class="ria">Происшествия</option>
+                        <option value="https://ria.ru/sport/" class="ria">Спорт</option>
+                        <!--<option value="https://ria.ru/science/" class="ria">Наука</option>-->
+                        <!--<option value="https://ria.ru/culture/" class="ria">Культура</option>-->
+                        <!--<option value="https://ria.ru/religion/" class="ria">Религия</option>-->
+
+                        <option value="https://www.championat.com/news/football/1.html" class="championat">Футбол</option>
+                        <option value="https://www.championat.com/news/hockey/1.html" class="championat">Хоккей</option>
+                        <option value="https://www.championat.com/news/tennis/1.html" class="championat">Теннис</option>
+                        <option value="https://www.championat.com/news/auto/1.html" class="championat">Авто</option>
+                        <option value="https://www.championat.com/news/boxing/1.html" class="championat">Бокс/ММА</option>
+                        <option value="https://www.championat.com/news/basketball/1.html" class="championat">Баскетбол</option>
+                        <option value="https://www.championat.com/news/volleyball/1.html" class="championat">Волейбол</option>
+                        <option value="https://www.championat.com/news/other/1.html" class="championat">Другие</option>
+                    </select>
+                </div>
+                <div class="filter__field">
+                    <input name="count" type="number" min=1 max=20 step=1 value="{{count}}">
+                </div>
+                <div class="filter__field">
+                    <input type="submit" value="Загрузить">
+                </div>
+            </form>
+            </div>
+        </div>
+        <ul class="news" id="news">
+        </ul>
+    </div>
+    <script id="news-template" type="text/x-handlebars-template">
+        <div>{{test}}</div>
+        {{#each news}}
+            <li class="news__item">{{title}}</li>
+        {{/each}}
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.chained.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script>
+        $('#source').val('{{source}}');
+        $("#category").chained("#source");
+        $('#category').val('{{category}}');
+    </script>
+    <script src="js/form.js"></script>
+</body>
+</html>

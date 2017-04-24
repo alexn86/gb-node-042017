@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.loader {
+    padding: 20px 0;
+}
+
+.loader__title {
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.filter__field {
+    display: inline-block;
+}
+
+.news {
+    margin: 0;
+    padding-left: 20px;
+    /*list-style: none;*/
+}
+
+.news__item {
+    margin-bottom: 10px;
+}

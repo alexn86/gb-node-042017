@@ -4,7 +4,8 @@
   "description": "Node.js geekbrain's homework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon task4/app.js --watch task4 --ignore node_modules"
   },
   "keywords": [],
   "author": "Alexander Nikolskiy",
@@ -12,12 +13,18 @@
   "dependencies": {
     "ansi": "^0.3.1",
     "beeper": "^1.1.1",
+    "body-parser": "^1.17.1",
     "cheerio": "^0.22.0",
     "colors": "^1.1.2",
+    "consolidate": "^0.14.5",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "handlebars": "^4.0.6",
     "minimist": "^1.2.0",
     "request": "^2.81.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0"
+    "eslint": "^3.19.0",
+    "nodemon": "^1.11.0"
   }
 }
