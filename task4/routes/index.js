@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    let obj = {
-        title: 'Загрузчик новостей',
-        source: req.cookies.source,
-        category: req.cookies.category,
-        count: req.cookies.count ? req.cookies.count : 10
+    const { source, category, count } = req.cookies;
+    const obj = {
+        source,
+        category,
+        count,
+        title: 'Загрузчик новостей'
     };
 
     res.render('index', obj);
