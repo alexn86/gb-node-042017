@@ -27,13 +27,9 @@
             if (typeof data === 'string') {
                 $('.news').html(data);
             } else {
-                //let template = Handlebars.compile($('#news-template').html());
-                //$('.news').html(template({ news: data.data }));
-                $('.news').html('');
+                let template = Handlebars.compile($('#news-template').html());
 
-                data.data.forEach(item => {
-                    $('.news').append(`<li class="news__item">${item.title}</li>`);
-                });
+                $('.news').html(template({ news: data.data }));
             }
         });
     }
