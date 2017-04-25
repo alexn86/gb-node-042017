@@ -7,7 +7,7 @@ function parse(html, parent, child, count) {
     return $(parent)
             .get()
             .slice(0, count)
-            .map((el) => ({ title: $(el).find(child).eq(0).text() }));
+            .map(el => ({ title: $(el).find(child).eq(0).text() }));
 }
 
 exports.get = function (source, html, count) {
