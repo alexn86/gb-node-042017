@@ -3,7 +3,15 @@ const router = express.Router();
 const User = require('../models/user');
 const crypto = require('crypto');
 
-router.get('/', (req, res) => {
+const isAuth = (req, res, next) => {
+    if (req.session.isAuth) {
+        return next();
+    }
+
+    res.redirect('/');
+};
+
+router.get('/', isAuth, (req, res) => {
     res.render('login');
 });
 
