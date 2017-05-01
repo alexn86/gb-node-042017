@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon task4/app.js --watch task4 --ignore node_modules"
+    "start": "nodemon --ignore node_modules"
   },
   "keywords": [],
   "author": "Alexander Nikolskiy",
@@ -18,9 +18,12 @@
     "colors": "^1.1.2",
     "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
+    "crypto": "^0.0.3",
     "express": "^4.15.2",
+    "express-session": "^1.15.2",
     "handlebars": "^4.0.6",
     "minimist": "^1.2.0",
+    "mongoose": "^4.9.6",
     "request": "^2.81.0"
   },
   "devDependencies": {
