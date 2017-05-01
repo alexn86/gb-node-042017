@@ -4,7 +4,7 @@ const User = require('../models/user');
 const crypto = require('crypto');
 
 const isAuth = (req, res, next) => {
-    if (req.session.isAuth) {
+    if (!req.session.isAuth) {
         return next();
     }
 
