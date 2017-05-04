@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="posts">
+            <div class="post__login">
+                Привет, {{userName}}!
+            </div>
+            <div class="posts__controls">
+                {{#if isAuth}}
+                    <a class="btn" href="/add">Добавить статью</a>
+                    <a class="btn" href="/auth/logout">Выйти</a>
+                {{else}}
+                    <a class="btn" href="/auth/login">Войти</a>
+                    <a class="btn" href="/auth/signup">Регистрация</a>
+                {{/if}}
+            </div>
+            {{status}}
+            {{#each posts}}
+                <article class="post">
+                    <div class="post__title">{{title}}</div>
+                    <div class="post__date">{{date}}</div>
+                    <div class="post__text">{{text}}</div>
+                    {{#if ../isAuth}}
+                        <div class="post__actions">
+                            <a class="post__action" href="/edit?id={{_id}}">Редактировать</a>
+                            <a class="post__action" href="#" onclick="confirmDelete('{{_id}}')">Удалить</a>
+                        </div>
+                    {{/if}}
+                </article>
+            {{/each}}
+        </section>
+    </div>
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Вы уверены?')) {
+                location.href='/delete?id=' + id;
+            }
+        }
+    </script>
+</body>
+</html>

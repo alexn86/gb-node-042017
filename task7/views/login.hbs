@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <div class="form__header">Авторизация</div>
+            <div class="form__status">{{status}}</div>
+            <form action="/auth/login" method="post">
+                <div class="form__field">
+                    <input name="login" type="text" placeholder="Введите логин">
+                </div>
+                <div class="form__field">
+                    <input name="password" type="password" placeholder="Введите пароль">
+                </div>
+                <div class="form__btn">
+                    <input type="submit" value="Войти" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
